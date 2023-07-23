@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DETAIL</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Tasks to be completed</h4>
+
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+          <h5 class="card-title">{{task.name}}</h5>
+                 Priority: {{task.priority}}<br>
+                Date: {{task.date}}<br>
+    <a href="{% url 'todoapp:delete' task.id %}" class="btn btn-warning">Done</a>
+                <a href="{% url 'todoapp:update' task.id %}" class="btn btn-success">Update</a>
+  </div>
+       </div>
+
+       </div>
+    </div></div>
+
+      {% endblock %}
+</body>
+</html>

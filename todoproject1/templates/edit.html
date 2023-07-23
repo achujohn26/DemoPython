@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="card" style="width: 18rem;">
+            <div class="card-header">
+          <h5 class="card-title">Task update</h5>
+                 <div class="card-body">{{task.name}}
+             <a href="{% url 'todoapp:update' task.id %}" class="btn btn-warning">update</a>
+</div>
+  </div>
+       </div>
+<form method="POST">
+    {% csrf_token%}
+    {{form1.as_p}}
+ <input type="submit" value="confirm update">
+</form>
+{% endblock %}
+</body>
+</html>
